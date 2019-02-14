@@ -270,37 +270,13 @@
 
     
     <script>
+            siteWelcome.classList.remove('active')    
             setTimeout(function(){
-                siteWelcome.classList.remove('active')
+                siteWelcome.classList.remove('active')    
             },2000)
             
     
-            window.onscroll = function(xxx){
-                if(window.scrollY > 0){  //scrollY表示页面滚动的垂直高度
-                    topNav.classList.add('sticky')
-                }else{
-                    topNav.classList.remove('sticky')
-                }
-            }
-    
-            let aTags = document.getElementsByClassName('menuTrigger')
-         
-            for(let i=0; i<aTags.length; i++){
-         
-                aTags[i].onmouseenter = function(x){  
-                    let a = x.currentTarget  
-                    let brother = a.nextSibling
-                    while(brother.nodetype ===3){
-                        brother = brother.nextSibling
-                    }
-                    console.log(brother)
-                }
-           
-                aTags][i].onmouseleave = function(x){
-    
-                }
-            }
-    
+            
         </script>
 </body>
 </html>
