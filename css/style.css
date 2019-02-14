@@ -184,15 +184,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .topNavHar .proList.active {
     display: block;
-        width: 100%
-    }
+    width: 100%
 }
-.topNavHar .proList {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-}
+
 .topNavHar .proList.active {
     display: block;
 }
