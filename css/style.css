@@ -164,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     background: #e6686a;
     height: 3px;
-    animation: menuSlide 1s linear;
+    animation: menuSlide 0.7s linear;
 }
 /*导航下划线实现从左向右滑动*/
 @keyframes menuSlide {
