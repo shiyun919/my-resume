@@ -25,8 +25,8 @@
                     <li><a href="">个人资料</a></li>
                     <li><a href="">技能&amp;工具</a></li>
                     <li><a href="">工作经历</a></li>
-                    <li>
-                        <a class="menuTrigger" href="">项目介绍</a>
+                    <li class="menuTrigger">
+                        <a href="">项目介绍</a>
                         <ul class="proList">
                             <li><a href="#">项目1</a></li>
                             <li><a href="#">项目2</a></li>
@@ -34,8 +34,8 @@
                         </ul>
                     </li>
                     <li><a href="">教育情况</a></li>
-                    <li>
-                        <a class="menuTrigger" href="">我的博客</a>
+                    <li class="menuTrigger">
+                        <a href="">我的博客</a>
                         <ul class="proList">
                             <li><a href="#">博客1</a></li>
                             <li><a href="#">博客2</a></li>
@@ -289,7 +289,8 @@
             }
         }
 
-        //3.触发下拉菜单
+        /*
+        //3.触发下拉菜单(监听a标签)
 
         //获取class名字为menuTrigger的a标签
         let aTags = document.getElementsByClassName('menuTrigger')
@@ -299,16 +300,46 @@
             aTags[i].onmouseenter = function(x){  
                 let a = x.currentTarget  
                 let brother = a.nextSibling
-                while(brother.nodetype ===3){
+                while(brother.tagName !== 'UL'){
                     brother = brother.nextSibling
                 }
-                console.log(brother)
+                //console.log(brother)
+                brother.classList.add('active')
             }
             //监听鼠标移除的a标签
-            [aTags][i].onmouseleave = function(x){
-
+            aTags[i].onmouseleave = function(x){
+                let a = x.currentTarget  
+                let brother = a.nextSibling
+                while(brother.tagName !== 'UL'){
+                    brother = brother.nextSibling
+                }
+                //console.log(brother)
+                brother.classList.remove('active')
             }
         }
+        */
+
+
+        //4.触发下拉菜单(监听li标签)
+
+        //获取class名字为menuTrigger的li标签
+        let liTags = document.getElementsByClassName('menuTrigger')
+        //遍历数组
+        for(let i=0; i<liTags.length; i++){
+            //监听鼠标移入的li标签
+            liTags[i].onmouseenter = function(x){  
+                let li = x.currentTarget  
+                let brother = li.getElementsByTagName('ul')[0]  //获取li标签中第0个（第一个）ul标签
+                brother.classList.add('active')
+            }
+            //监听鼠标移除的li标签
+            liTags[i].onmouseleave = function(x){
+                let li = x.currentTarget  
+                let brother = li.getElementsByTagName('ul')[0]
+                brother.classList.remove('active')
+            }
+        }
+
     </script>
 </body>
 </html>
