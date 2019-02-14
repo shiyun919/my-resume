@@ -38,6 +38,67 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*正文样式*/
+.site-welcome {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    z-index: 1;
+    justify-content: center;
+    align-items: Center;
+}
+.site-welcome.active {
+    display: flex;
+}
+.loading {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.loading::before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: black;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: cricle 1.5s linear infinite;
+}
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: black;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: cricle 1.5s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes cricle {
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+    100%{
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
 
 .topNavHar {
     position: fixed;
@@ -45,7 +106,6 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     width: 100%;
     padding: 20px 0px;
-  
     transition: all 0.5s;
 }
 .topNavHar .header-box {
@@ -58,6 +118,11 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     z-index: 1;
     transition: all 0.5s;
+}
+.topNavHar.sticky {
+    background: #fff;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }
 .topNavHar .header-box {
     margin: 0px 20px;
@@ -104,10 +169,17 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     background: #e6686a;
     height: 3px;
-    animation: menuSlide 0.7s linear;
+    animation: menuSlide 1s linear;
+}
+@keyframes menuSlide {
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background: rgb(230, 104, 106);
+    animation: navSlide 0.3s linear none;
 }
 /*导航下划线实现从左向右滑动*/
-@keyframes menuSlide {
+@keyframes navSlide {
     0%{
         width: 0;
     }
@@ -116,6 +188,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.topNavHar .proList {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+.topNavHar .proList.active {
+    display: block;
+        width: 100%
+    }
+}
 .topNavHar .proList {
     display: none;
     position: absolute;
@@ -543,7 +626,6 @@ section.myBlog .blogButton a {
 section.myBlog .blogButton a:hover {
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2);
 }
-
 .site-welcome {
     display: none;
     position: fixed;
@@ -606,4 +688,3 @@ section.myBlog .blogButton a:hover {
         opacity: 0;    /*透明度*/
     }
 }
-
