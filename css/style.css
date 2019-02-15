@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .topNavHar .proList > li {
     white-space: nowrap;
-    padding: 5px 5px;
+    padding: 5px 10px;
 }
 .banner {
     background: url(./image/rs-cover.jpg) center center no-repeat;
