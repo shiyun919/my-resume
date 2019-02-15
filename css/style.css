@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 3px;
     animation: menuSlide 0.5s linear;
 }
-/*导航下划线实现从左向右滑动*/
+/*导航下划线实现从左向右滑动~~~指父级标签的左右*/
 @keyframes menuSlide {
     0%{
         width: 0;
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.topNavHar .header-box > nav > ul .proList {
+.topNavHar .header-box > nav > ul > li .proList {
     display: none;
     position: absolute;
     right: 0;
@@ -184,6 +184,15 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff;
     font-size: 12px;
     color: #3d4451;
+    animation: menuList 0.5s
+}
+@keyframes menuList {
+    0%{
+        margin-right: 100%;
+    }
+    100%{
+        margin-right: 0%;
+    }
 }
 .topNavHar .header-box > nav > ul > li.active .proList {
     display: block;
