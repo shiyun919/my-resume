@@ -20,12 +20,12 @@
                 <span class="p1">RS</span>
                 <span class="p2">card</span>
             </a>
-            <nav class="right"> 
+            <nav class="menu right"> 
                 <ul class="clearfix">
                     <li><a href="">个人资料</a></li>
                     <li><a href="">技能&amp;工具</a></li>
                     <li><a href="">工作经历</a></li>
-                    <li class="menuTrigger">
+                    <li>
                         <a href="">项目介绍</a>
                         <ul class="proList">
                             <li><a href="#">项目1</a></li>
@@ -34,7 +34,7 @@
                         </ul>
                     </li>
                     <li><a href="">教育情况</a></li>
-                    <li class="menuTrigger">
+                    <li>
                         <a href="">我的博客</a>
                         <ul class="proList">
                             <li><a href="#">博客1</a></li>
@@ -320,6 +320,8 @@
         */
 
 
+
+        /*
         //4.触发下拉菜单(监听li标签)
 
         //获取class名字为menuTrigger的li标签
@@ -339,6 +341,25 @@
                 //let li = x.currentTarget  
                 //let brother = li.getElementsByTagName('ul')[0]
                 //brother.classList.remove('active')
+            }
+        }
+        */
+
+
+
+        //5.触发下拉菜单(监听li标签)
+
+        //获取nav > ul >li标签
+        let liTags = document.querySelectorAll('nav > ul > li')
+        //遍历数组
+        for(let i=0; i<liTags.length; i++){
+            //监听鼠标移入的li标签
+            liTags[i].onmouseenter = function(x){  
+                x.currentTarget.classList.add('active')  
+            }
+            //监听鼠标移除的li标签
+            liTags[i].onmouseleave = function(x){
+                x.currentTarget.classList.remove('active')
             }
         }
 
