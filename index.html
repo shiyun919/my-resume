@@ -22,20 +22,20 @@
             </a>
             <nav class="menu right"> 
                 <ul class="clearfix">
-                    <li><a href="">个人资料</a></li>
-                    <li><a href="">技能&amp;工具</a></li>
-                    <li><a href="">工作经历</a></li>
+                    <li><a href="#personalData">个人资料</a></li>
+                    <li><a href="#skills">技能&amp;工具</a></li>
+                    <li><a href="#experience">工作经历</a></li>
                     <li>
-                        <a href="">项目介绍</a>
+                        <a href="#projects">项目介绍</a>
                         <ul class="proList">
                             <li><a href="#">项目1</a></li>
                             <li><a href="#">项目2</a></li>
                             <li><a href="#">项目3</a></li>
                         </ul>
                     </li>
-                    <li><a href="">教育情况</a></li>
+                    <li><a href="#education">教育情况</a></li>
                     <li>
-                        <a href="">我的博客</a>
+                        <a href="#blogs">我的博客</a>
                         <ul class="proList">
                             <li><a href="#">博客1</a></li>
                             <li><a href="#">博客2</a></li>
@@ -49,7 +49,7 @@
     <div class="banner">
         <div class="bg-color"></div>
     </div>
-    <main>
+    <main id="personalData">
         <div class="details">
             <div class="d-text clearfix">
                 <div class="d-image left">
@@ -114,7 +114,7 @@
         </p>
         <p class="text">你好！我是石云，专业从事前端开发。有过2年的前端开发工作经历，涉及web端和小程序开发，熟悉html5/css3代码规范，精通多种编程语言，包括html5/css3、JavaScript等；熟练使用jQuery、vue.js、Bootstrap.js等流行的前端框架；了解https协议、Node.js。熟练使用webstorm、visual studio code等前端开发工具。</p>
     </div>
-    <section class="professionalSkills">
+    <section id="skills" class="professionalSkills">
         <h2>专业技能&工具</h2>
         <div class="skills-list">
             <ul class="clearfix">
@@ -169,7 +169,7 @@
             </ul>
         </div>
     </section>
-    <section class="workExperience">
+    <section id="experience" class="workExperience">
         <h2>工作经历</h2>
         <div class="experience-list clearfix">
             <div class="firstCompany left">
@@ -195,7 +195,7 @@
             </div>
         </div>
     </section>
-    <section class="education">
+    <section id="education" class="education">
         <h2>教育情况</h2>
         <div class="experience-list clearfix">
             <div class="firstEducation left">
@@ -218,7 +218,7 @@
             </div>
         </div>
     </section>
-    <section class="myBlog">
+    <section id="blogs" class="myBlog">
         <h2>我的博客</h2>
         <div class="myBlog-list clearfix">
             <div class="firstBlog left">
@@ -290,7 +290,7 @@
         }
 
         /*
-        //3.触发下拉菜单(监听a标签)
+        //3-1.触发下拉菜单(监听a标签)
 
         //获取class名字为menuTrigger的a标签
         let aTags = document.getElementsByClassName('menuTrigger')
@@ -322,7 +322,7 @@
 
 
         /*
-        //4.触发下拉菜单(监听li标签)
+        //3-2.触发下拉菜单(监听li标签)
 
         //获取class名字为menuTrigger的li标签
         let liTags = document.getElementsByClassName('menuTrigger')
@@ -347,9 +347,9 @@
 
 
 
-        //5.触发下拉菜单(监听li标签)
+        //3-3.触发下拉菜单(监听li标签)
 
-        //获取nav > ul >li标签
+        //获取nav > ul > li标签
         let liTags = document.querySelectorAll('nav > ul > li')
         //遍历数组
         for(let i=0; i<liTags.length; i++){
@@ -363,6 +363,23 @@
             }
         }
 
+
+        //4.滚动到指定元素位置
+
+        //获取nav > ul > li > a标签
+        let aTags = document.querySelectorAll('nav > ul > li > a')
+        //遍历数组
+        for(let i=0; i<aTags.length; i++){
+            //监听鼠标点击a标签
+            aTags[i].onclick = function(x){
+                x.preventDefault()    //阻止点击a标签产生的默认动作
+                let a = x.currentTarget  //获取到用户点击的a标签
+                let href = a.getAttribute('href')  //获取到a标签上用户写的href地址
+                let element = document.querySelector(href) //根据获取的href得到我们的元素
+                let top = element.offsetTop  //通过offsetTop的API获取元素离网页窗口顶部的距离
+                window.scrollTo(0, top - 80)   //通过scrollTo的API获取窗口滑动到离顶部的距离
+            }
+        }
     </script>
 </body>
 </html>
