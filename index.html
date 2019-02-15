@@ -328,15 +328,17 @@
         for(let i=0; i<liTags.length; i++){
             //监听鼠标移入的li标签
             liTags[i].onmouseenter = function(x){  
-                let li = x.currentTarget  
-                let brother = li.getElementsByTagName('ul')[0]  //获取li标签中第0个（第一个）ul标签
-                brother.classList.add('active')
+                x.currentTarget.classList.add('active')  
+                //let li = x.currentTarget
+                //let brother = li.getElementsByTagName('ul')[0]  //获取li标签中第0个（第一个）ul标签
+                //brother.classList.add('active')
             }
             //监听鼠标移除的li标签
             liTags[i].onmouseleave = function(x){
-                let li = x.currentTarget  
-                let brother = li.getElementsByTagName('ul')[0]
-                brother.classList.remove('active')
+                x.currentTarget.classList.remove('active')
+                //let li = x.currentTarget  
+                //let brother = li.getElementsByTagName('ul')[0]
+                //brother.classList.remove('active')
             }
         }
 
