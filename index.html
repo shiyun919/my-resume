@@ -432,7 +432,7 @@
                 let targetTop = top - 80
                 let s = targetTop - currentTop
                 var coords = { x: 0, y: currentTop }; // 开始位置 (0, 0)
-                var t = (s/100)*300
+                var t = Math.abs((s/100)*300)
                 if(t>500){
                     t = 500
                 }
