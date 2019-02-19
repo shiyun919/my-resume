@@ -440,7 +440,7 @@
                     .to({ x: 0, y: targetTop }, t) //多少时间内移动多少
                     .easing(TWEEN.Easing.Quadratic.InOut) 
                     .onUpdate(function() { 
-                       window.scrollY(0 , coords.y)
+                       window.scrollTo(0 , coords.y)
                     })
                     .start(); 
             }
