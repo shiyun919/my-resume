@@ -49,7 +49,7 @@
     <div class="banner">
         <div class="bg-color"></div>
     </div>
-    <main id="personalData">
+    <main data-x id="personalData">
         <div class="details">
             <div class="d-text clearfix">
                 <div class="d-image left">
@@ -114,7 +114,7 @@
         </p>
         <p class="text">你好！我是石云，专业从事前端开发。有过2年的前端开发工作经历，涉及web端和小程序开发，熟悉html5/css3代码规范，精通多种编程语言，包括html5/css3、JavaScript等；熟练使用jQuery、vue.js、Bootstrap.js等流行的前端框架；了解https协议、Node.js。熟练使用webstorm、visual studio code等前端开发工具。</p>
     </div>
-    <section id="skills" class="professionalSkills">
+    <section data-x id="skills" class="professionalSkills">
         <h2>专业技能&工具</h2>
         <div class="skills-list">
             <ul class="clearfix">
@@ -169,7 +169,7 @@
             </ul>
         </div>
     </section>
-    <section id="experience" class="workExperience">
+    <section data-x id="experience" class="workExperience">
         <h2>工作经历</h2>
         <div class="experience-list clearfix">
             <div class="firstCompany left">
@@ -195,7 +195,7 @@
             </div>
         </div>
     </section>
-    <section id="education" class="education">
+    <section data-x id="education" class="education">
         <h2>教育情况</h2>
         <div class="experience-list clearfix">
             <div class="firstEducation left">
@@ -218,7 +218,7 @@
             </div>
         </div>
     </section>
-    <section id="blogs" class="myBlog">
+    <section data-x id="blogs" class="myBlog">
         <h2>我的博客</h2>
         <div class="myBlog-list clearfix">
             <div class="firstBlog left">
@@ -287,6 +287,18 @@
             }else{
                 topNav.classList.remove('sticky')
             }
+
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for(let i = 1; i<specialTags.length; i++){
+                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                    minIndex = i
+                }
+            }
+            for(let i = 0; i < specialTags.length; i++){
+                specialTags[i].classList.remove('active')
+            }
+            specialTags[minIndex].classList.add('active')
         }
 
         /*
@@ -443,6 +455,7 @@
                        window.scrollTo(0 , coords.y)
                     })
                     .start(); 
+
             }
         }
 
