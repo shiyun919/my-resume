@@ -300,7 +300,7 @@
             let li = a.parentNode  //找a标签的父亲
             let brotherAndme = li.parentNode.children
             for(let i = 0; i<brotherAndme.length; i++){
-                brotherAndme.classList.remove('highlight')
+                brotherAndme[i].classList.remove('highlight')
             }
             li.classList.add('highlight')
             
