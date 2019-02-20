@@ -302,11 +302,12 @@
             let id = specialTags[minIndex].id
             let a = document.querySelector('a[href="#'+ id +'"]')
             let li = a.parentNode  //找a标签的父亲
-            li.classList.add('active')
             let brotherAndme = li.parentNode.children
             for(let i = 0; i < brotherAndme.length; i++){
                 brotherAndme.classList.remove('active')
             }
+            li.classList.add('active')
+            
         }
 
         /*
