@@ -324,14 +324,16 @@ h1, h2, h3, h4, h5, h6 {
 section.professionalSkills,
 section.workExperience,
 section.education,
-section.myBlog {
+section.myBlog,
+section.projectIntroduction {
     max-width:940px;
     margin: 0 auto;
 }
 section.professionalSkills > h2,
 section.workExperience > h2,
 section.education > h2,
-section.myBlog > h2 {
+section.myBlog > h2,
+section.projectIntroduction > h2 {
     text-align: center;
     padding-top: 30px;
 }
@@ -615,7 +617,7 @@ section.myBlog .blogButton a {
     letter-spacing: 0.05em;
     background: #e0e0e0;
     border-radius: 4px;
-    transition: shadow 0.6s;
+    transition: all 0.6s;
 }
 section.myBlog .blogButton a:hover {
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2);
@@ -681,4 +683,46 @@ section.myBlog .blogButton a:hover {
         height: 100px;
         opacity: 0;    /*透明度*/
     }
+}
+.projectIntroduction .navigation {
+    display: inline-block;
+    text-align: center;
+    margin-top: 32px;
+}
+.projectIntroduction .navigation ul {
+    font-size: 16px;
+}
+.projectIntroduction .navigation ul li {
+    margin-left: 40px;
+    float: left;
+
+}
+.projectIntroduction .navigation ul li:nth-child(1){
+    margin-left: 0;
+}
+.projectIntroduction .navigation .bar {
+    height: 5px;
+    background: white;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.projectIntroduction .navigation .bar .bar-inner {
+    height: 100%;
+    border-radius: 2px;
+    background: #E6686A;
+    transition: all 0.3s;
+}
+.projectIntroduction .navigation .state-1 .bar-inner {
+    width: 50px;
+}
+.projectIntroduction .navigation .state-2 .bar-inner {
+    width: 50px;
+    margin-left: 65px;
+}
+.projectIntroduction .navigation .state-3 .bar-inner {
+    width: 96px;
+    margin-left: 140px;
+}
+.projectIntroduction .project-list {
+    margin: 30px 0px 32px 0px;
 }
