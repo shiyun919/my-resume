@@ -684,45 +684,47 @@ section.myBlog .blogButton a:hover {
         opacity: 0;    /*透明度*/
     }
 }
-.projectIntroduction .navigation {
-    display: inline-block;
+section.projectIntroduction {
     text-align: center;
+}
+section.projectIntroduction > nav {
+    display: inline-block;
     margin-top: 32px;
 }
-.projectIntroduction .navigation ul {
+section.projectIntroduction > nav ul {
     font-size: 16px;
+    display: flex;
+    justify-content: center;
 }
-.projectIntroduction .navigation ul li {
+section.projectIntroduction > nav ul li {
     margin-left: 40px;
-    float: left;
-
 }
-.projectIntroduction .navigation ul li:nth-child(1){
+section.projectIntroduction > nav ul li:nth-child(1){
     margin-left: 0;
 }
-.projectIntroduction .navigation .bar {
+section.projectIntroduction > nav .bar {
     height: 5px;
     background: white;
     margin-top: 5px;
     border-radius: 2px;
 }
-.projectIntroduction .navigation .bar .bar-inner {
+section.projectIntroduction > nav .bar .bar-inner {
     height: 100%;
     border-radius: 2px;
     background: #E6686A;
     transition: all 0.3s;
 }
-.projectIntroduction .navigation .state-1 .bar-inner {
+section.projectIntroduction > nav .state-1 .bar-inner {
     width: 50px;
 }
-.projectIntroduction .navigation .state-2 .bar-inner {
+section.projectIntroduction > nav .state-2 .bar-inner {
     width: 50px;
     margin-left: 65px;
 }
-.projectIntroduction .navigation .state-3 .bar-inner {
+section.projectIntroduction > nav .state-3 .bar-inner {
     width: 96px;
     margin-left: 140px;
 }
-.projectIntroduction .project-list {
+section.projectIntroduction .project-list {
     margin: 30px 0px 32px 0px;
 }
