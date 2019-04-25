@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-.topNavHar .header-box > nav > ul > li.active .proList {
+.topNavHar .header-box > nav > ul > li:hover .proList {
     display: block;
     animation: menuList 0.5s
 }
@@ -698,6 +698,7 @@ section.projectIntroduction > nav ul {
 }
 section.projectIntroduction > nav ul li {
     margin-left: 40px;
+    cursor: pointer;
 }
 section.projectIntroduction > nav ul li:nth-child(1){
     margin-left: 0;
@@ -714,17 +715,52 @@ section.projectIntroduction > nav .bar .bar-inner {
     background: #E6686A;
     transition: all 0.3s;
 }
-section.projectIntroduction > nav .state-1 .bar-inner {
+section.projectIntroduction > nav .bar.state-1 .bar-inner {
     width: 50px;
+    margin-left: 0px;
 }
-section.projectIntroduction > nav .state-2 .bar-inner {
+section.projectIntroduction > nav .bar.state-2 .bar-inner {
     width: 50px;
     margin-left: 65px;
 }
-section.projectIntroduction > nav .state-3 .bar-inner {
+section.projectIntroduction > nav .bar.state-3 .bar-inner {
     width: 96px;
     margin-left: 140px;
 }
 section.projectIntroduction .project-list {
     margin: 30px 0px 32px 0px;
+    height: 597px;
+    position: relative;
+}
+.project-list .bigImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.project-list .bigImage a,
+.project-list .smallImage1 a,
+.project-list .smallImage2 a {
+    display: inline-block;
+}
+.project-list img {
+    vertical-align: top;
+}
+.project-list .bigImage a img {
+    width: 606px;
+    height: 597px;
+}
+.project-list .smallImage1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.project-list .smallImage2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.project-list .smallImage1 a img,
+.project-list .smallImage2 a img {
+    width: 293px;
+    height: 285px;
 }

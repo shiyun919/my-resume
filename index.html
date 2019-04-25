@@ -171,20 +171,39 @@
         </div>
     </section>
     <!-- 作品项目 -->
-    <section data-x id="works" class="projectIntroduction">
+    <section data-x id="projects" class="projectIntroduction">
         <h2>项目介绍</h2>
         <nav>
             <ul>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生JS&CSS</li>
+                <li id="project1">所有</li>
+                <li id="project2">框架</li>
+                <li id="project3">原生JS&CSS</li>
             </ul>
             <div id="projectBar" class="bar state-1">
                 <div class="bar-inner"></div>
             </div>
         </nav>
+        <script>
+            project1.onclick = function(){
+                projectBar.className = 'bar state-1'
+            }
+            project2.onclick = function(){
+                projectBar.className = 'bar state-2'
+            }
+            project3.onclick = function(){
+                projectBar.className = 'bar state-3'
+            }
+        </script>
         <div class="project-list">
-            
+            <div class="bigImage">
+                <a href="#"><img src="./image/1.jpg" alt="" srcset=""></a>
+            </div>
+            <div class="smallImage1">
+                <a href="#"><img src="./image/2.jpg" alt="" srcset=""></a>
+            </div>
+            <div class="smallImage2">
+                <a href="#"><img src="./image/3.jpg" alt="" srcset=""></a>
+            </div>
         </div>
     </section>
     <!-- 工作经历 -->
@@ -291,6 +310,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <script src="./js/my.js"></script>
+    <script>
+    
+</script>
     
 </body>
 </html>
