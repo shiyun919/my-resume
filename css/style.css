@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px 10px;
 }
 .banner {
-    background: url(./image/rs-cover.jpg) center center no-repeat;
+    background: url(../image/rs-cover.jpg) center center no-repeat;
     background-size:cover;
     height: 515px;
 }
@@ -686,6 +686,7 @@ section.myBlog .blogButton a:hover {
 }
 section.projectIntroduction {
     text-align: center;
+	margin-bottom: 30px;
 }
 section.projectIntroduction > nav {
     display: inline-block;
@@ -763,4 +764,21 @@ section.projectIntroduction .project-list {
 .project-list .smallImage2 a img {
     width: 293px;
     height: 285px;
+}
+
+
+/*Swiper轮播插件*/
+.swiper-container {
+    width: 940px;
+    height: 470px;
+}
+.swiper-container .swiper-slide {
+	background: #fff;
+}
+.swiper-container .swiper-slide a {
+	display: inline-block;
+}
+.swiper-container .swiper-slide a img {
+	width: 940px;
+	height: 470px;
 }
