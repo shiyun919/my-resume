@@ -364,13 +364,18 @@ section.professionalSkills .skills-list .skillBar-1 {
     height: 4px;
     background: rgba(237, 212, 212);
     border-radius: 4px;
+	overflow: hidden;
 }
-section.professionalSkills .skills-list .skillBar-2 {
+section.professionalSkills .skills-list .skillBar-1 .skillBar-2 {
     width: 70%;
     height: 4px;
     background: #e8676b;
-    border-radius: 6px;
-    animation:  glide-h 1s linear;
+    border-radius: 4px;
+    transform: translateX(0); 
+	transition: all 1s;
+}
+section.professionalSkills.offset .skills-list .skillBar-1 .skillBar-2 {
+	transform: translateX(-100%);
 }
 @keyframes glide-h {
     from{
@@ -779,6 +784,5 @@ section.projectIntroduction .project-list {
 	display: inline-block;
 }
 .swiper-container .swiper-slide a img {
-	width: 940px;
-	height: 470px;
+	display: inline-block;
 }
