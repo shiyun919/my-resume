@@ -784,5 +784,7 @@ section.projectIntroduction .project-list {
 	display: inline-block;
 }
 .swiper-container .swiper-slide a img {
-	display: inline-block;
+    display: inline-block;
+    width: 940px;
+    height: 470px;
 }
