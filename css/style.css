@@ -371,11 +371,6 @@ section.professionalSkills .skills-list .skillBar-1 .skillBar-2 {
     height: 4px;
     background: #e8676b;
     border-radius: 4px;
-    transform: translateX(0); 
-	transition: all 1s;
-}
-section.professionalSkills.offset .skills-list .skillBar-1 .skillBar-2 {
-	transform: translateX(-100%);
 }
 @keyframes glide-h {
     from{
