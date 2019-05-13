@@ -99,6 +99,22 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
     }
 }
+[data-x].offset {
+	transform: translateY(100px);
+}
+[data-x] {
+	transform: translateY(0);
+	transition: all 0.5s;
+}
+
+@keyframes slideUp {
+    0%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 
 .topNavHar {
     position: fixed;
@@ -333,7 +349,8 @@ section.professionalSkills > h2,
 section.workExperience > h2,
 section.education > h2,
 section.myBlog > h2,
-section.projectIntroduction > h2 {
+section.projectIntroduction > h2,
+section.myMessages > h2 {
     text-align: center;
     padding-top: 30px;
 }
@@ -782,4 +799,58 @@ section.projectIntroduction .project-list {
     display: inline-block;
     width: 940px;
     height: 470px;
+}
+section.myMessages {
+    max-width:640px;
+    margin: 0 auto;
+	margin-top: 20px;
+	
+}
+section.myMessages .messages {
+	box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2);
+	margin: 30px 0px 0px 0px;
+	padding-bottom: 40px;
+}
+section.myMessages .messagesBox {
+	margin-bottom: 40px;
+	background: #fff;
+}
+section.myMessages .messagesBox > ol {
+	padding: 0px 30px;
+}
+section.myMessages .messagesBox > ol > li {
+	font-size: 14px;
+	color: #444444;
+	padding: 20px 0px;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+section.myMessages .messagesBox > ol > li:last-child {
+	border-bottom: 1px solid transparent;
+}
+section.myMessages .messages > form {
+	text-align: center;
+	font-size: 16px;
+}
+section.myMessages .messages > form > label {
+	height: 25px;
+	line-height: 25px;
+}
+section.myMessages .messages > form > input:focus {
+	outline: none;
+}
+section.myMessages .messages > form > input.userName,
+section.myMessages .messages > form > input.contentText {
+	padding: 0px 0px 0px 10px;
+	margin-right: 20px;
+	height: 25px;
+	line-height: 25px;
+}
+
+section.myMessages .messages > form > input.button {
+	background: #2C81FF;
+	padding: 5px 10px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
 }

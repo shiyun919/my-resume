@@ -13,16 +13,26 @@ setTimeout(function() {
 
 //2.topNavBar导航效果
 
+//添加offset类
+let specialTags = document.querySelectorAll('[data-x]')
+	for (let i = 1; i < specialTags.length; i++) {
+		specialTags[i].classList.add('offset')
+	}
+
 //监听鼠标滚动效果
 findClosest()
-window.onscroll = function(xxx) {
+window.addEventListener('scroll', function(xxx) { 
+	
+	findClosest()
+}) 
+
+window.addEventListener('scroll', function(xxx) { 
 	if (window.scrollY > 0) { //scrollY表示页面滚动的垂直高度
 		topNav.classList.add('sticky')
 	} else {
 		topNav.classList.remove('sticky')
 	}
-	findClosest()
-}
+})
 	
 function findClosest(){
 	let specialTags = document.querySelectorAll('[data-x]')
@@ -32,6 +42,8 @@ function findClosest(){
 			minIndex = i
 		}
 	}
+	
+	specialTags[minIndex].classList.remove('offset')
 	let id = specialTags[minIndex].id
 	let a = document.querySelector('a[href="#' + id + '"]')
 	let li = a.parentNode //找a标签的父亲
