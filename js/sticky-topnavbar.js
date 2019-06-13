@@ -1,6 +1,5 @@
-
-!function (){
-	window.addEventListener('scroll', function(xxx) { 
+! function() {
+	window.addEventListener('scroll', function(xxx) {
 		if (window.scrollY > 0) { //scrollY表示页面滚动的垂直高度
 			topNav.classList.add('sticky')
 		} else {
@@ -24,7 +23,7 @@
 		})
 	}
 	controller(view)
-	//controller.call(null,view)  这2中调用执行函数的方法都可用
+	//controller.call(null,view)  这2种调用执行函数的方法都可用
 }.call()
 
 
@@ -51,7 +50,7 @@
 		})
 	}
 	controller.init(view)
-	//controller.init.call(controller,view)  这2中调用执行函数的方法都可用
+	//controller.init.call(controller,view)  这2种调用执行函数的方法都可用
 }.call()
 
 
@@ -65,27 +64,27 @@
 			this.view = view
 			this.bindEvents()   //绑定事件
 			// this.bindEvents.call(this)
+		},
+		bindEvents: function(){
+			var view = this.view
+			window.addEventListener('scroll', (xxx) => { 
+				if (window.scrollY > 0) { //scrollY表示页面滚动的垂直高度
+					this.active()
+				} else {
+					this.deactive()
+				}
+			})
+			//箭头函数没有this
+		},
+		active: function(){
+			this.view.classList.add('sticky')
+		},
+		deactive: function(){
+			this.view.classList.remove('sticky')
 		}
-	},
-	bindEvents: function(){
-		var view = this.view
-		window.addEventListener('scroll', (xxx) => { 
-			if (window.scrollY > 0) { //scrollY表示页面滚动的垂直高度
-				this.active()
-			} else {
-				this.deactive()
-			}
-		})
-		//箭头函数没有this
-	},
-	active: function(){
-		this.view.classList.add('sticky')
-	},
-	deactive: function(){
-		this.view.classList.remove('sticky')
 	}
 	controller.init(view)
-	//controller.init.call(controller,view)  这2中调用执行函数的方法都可用
+	//controller.init.call(controller,view)  这2种调用执行函数的方法都可用
 }.call()
 
 */

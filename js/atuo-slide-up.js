@@ -31,3 +31,9 @@
 		li.classList.add('highlight')
 	}
 }.call()
+
+
+
+
+
+//改造成MVC中的V和C
